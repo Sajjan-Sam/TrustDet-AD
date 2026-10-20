@@ -57,14 +57,6 @@ The fixed-score baseline equally averages confidence, inverse calibration error,
 | [BDD100K](https://bdd-data.berkeley.edu/) | Condition-specific subsets derived from the **official validation set**, each divided into custom validation and test halves |
 
 BDD100K conditions are selected using time-of-day and weather attributes, including daytime, night, rainy, and foggy. 
-| Detector | Pretrained checkpoint / weights |
-| --- | --- |
-| YOLOv8n | `yolov8n.pt` |
-| YOLOv10n | `yolov10n.pt` |
-| RT-DETR | `rtdetr-l.pt` |
-| Faster R-CNN (ResNet-50-FPN) | `FasterRCNN_ResNet50_FPN_Weights.COCO_V1` |
-
-Models retain their upstream pretrained weights. The detector checkpoints and datasets are not distributed with this repository.
 
 ## Installation
 
@@ -129,7 +121,7 @@ python src/run_ablation.py
 python src/bootstrap_confidence_intervals.py
 ```
 
-**6. Generate optional plots and qualitative examples.**
+**6. Generate plots and qualitative examples.**
 
 ```bash
 python src/make_plots.py
@@ -177,17 +169,6 @@ TrustDet-AD/
 
 The scripts generate `data/processed/`, `results/`, `logs/`, and `figures/` locally. The tree above highlights principal files rather than every source module.
 
-## Implementation notes and limitations
-
-This release is intended to make the implemented evaluation **inspectable and reproducible**, not to imply that every limitation of the protocol has been resolved.
-
-1. **Validation reuse:** The same validation population is used both to fit the condition-aware calibrator and to select the gating thresholds. There is no independent calibration holdout.
-2. **Nonstandard evaluation partitions:** ExDark uses a custom split; BDD100K uses custom subdivisions of its official validation set. BDD100K condition groups can share underlying images, so pooled observations may not be independent.
-3. **Class mapping:** COCO-to-BDD100K mapping does not cover the BDD100K *rider* and *traffic sign* classes. Per-class results should accompany aggregate detector comparisons.
-4. **Metric interpretation:** The gating evaluator and bootstrap script use different denominators for a metric labeled false-trusted rate (FTR); compare them only after harmonizing the definition. Detection-level bootstrap resampling also does not account for within-image dependence.
-5. **Evaluation implementation:** The detection-correctness matcher and the precision/recall evaluator do not use identical matching procedures. Some configuration fields and thresholds are fixed inside scripts rather than controlled uniformly through YAML.
-6. **Cost and portability:** Repeated perturbation inference and EigenCAM computation incur additional latency. Runtime overhead is also a model feature, so hardware and package versions can influence the fitted score.
-7. **Rerun isolation:** Some stages reuse cached files or append outputs. Archive or remove old outputs and use a clean run directory or checkout when changing experimental settings.
 
 Further details are documented in [REPRODUCING.md](docs/REPRODUCING.md).
 
