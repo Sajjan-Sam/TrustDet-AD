@@ -56,8 +56,7 @@ The fixed-score baseline equally averages confidence, inverse calibration error,
 | [ExDark](https://github.com/cs-chan/Exclusively-Dark-Image-Dataset) | Custom 70/15/15 split within class folders; validation and test partitions are used for evaluation |
 | [BDD100K](https://bdd-data.berkeley.edu/) | Condition-specific subsets derived from the **official validation set**, each divided into custom validation and test halves |
 
-BDD100K conditions are selected using time-of-day and weather attributes, including daytime, night, rainy, and foggy. These derived test subsets **are not the official BDD100K test set**. See [dataset preparation](docs/DATASETS.md) for expected directory layouts and annotation requirements.
-
+BDD100K conditions are selected using time-of-day and weather attributes, including daytime, night, rainy, and foggy. 
 | Detector | Pretrained checkpoint / weights |
 | --- | --- |
 | YOLOv8n | `yolov8n.pt` |
