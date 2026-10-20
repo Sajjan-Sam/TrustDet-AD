@@ -1,10 +1,39 @@
-# TrustDet-AD
 
-**Condition-Calibrated Reliability Scoring and Risk-Aware Gating for Object Detection in Adverse Visual Conditions**
+<div align="center">
 
-*Research implementation | PyTorch | Object detection | Reliability assessment | Adverse conditions*
+# 🛡️ TrustDet-AD
 
-[Overview](#overview) · [Method](#method-overview) · [Datasets](#datasets-and-detectors) · [Installation](#installation) · [Reproduction](#reproducing-the-experiments) · [Evaluation](#evaluation-protocol) · [Limitations](#implementation-notes-and-limitations)
+### Condition-Calibrated Reliability Scoring and Risk-Aware Gating for Object Detection in Adverse Visual Conditions
+
+**A Research Framework for Trustworthy Object Detection under Adverse Visual Conditions**
+
+<br>
+
+![Python](https://img.shields.io/badge/Python-Research_Code-3776AB?style=flat-square&logo=python&logoColor=white)
+![PyTorch](https://img.shields.io/badge/Framework-PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
+![Object Detection](https://img.shields.io/badge/Task-Object_Detection-2563EB?style=flat-square)
+![Reliability](https://img.shields.io/badge/Focus-Reliability_Assessment-00897B?style=flat-square)
+![Research](https://img.shields.io/badge/Status-Research_Implementation-475569?style=flat-square)
+
+<br>
+
+*Assessing detection reliability through confidence calibration, prediction consistency, uncertainty estimation, and explainability stability.*
+
+<br>
+
+[**📖 Overview**](#overview) &nbsp;•&nbsp;
+[**🧠 Methodology**](#method-overview) &nbsp;•&nbsp;
+[**📊 Datasets**](#datasets-and-detectors) &nbsp;•&nbsp;
+[**⚙️ Installation**](#installation)
+
+[**🚀 Reproduction**](#reproducing-the-experiments) &nbsp;•&nbsp;
+[**📈 Evaluation**](#evaluation-protocol) &nbsp;•&nbsp;
+[**📝 Limitations**](#implementation-notes-and-limitations)
+
+</div>
+
+---
+
 
 ## Overview
 
