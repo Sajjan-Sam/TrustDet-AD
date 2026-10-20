@@ -1,0 +1,57 @@
+# Python environments and caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv*/
+venv/
+*.egg-info/
+build/
+dist/
+
+# Datasets, predictions, fitted models and generated outputs
+/data/
+/results/
+/figures/
+/logs/
+/runs/
+*.pt
+*.pth
+*.onnx
+*.pkl
+*.pickle
+*.zip
+*.tar
+*.tar.gz
+*.tmp
+
+# Local settings and credentials
+.env
+.env.*
+*.pem
+*.key
+configs/*local*
+
+# Manuscripts and internal working files
+/paper*/
+/agent_reports/
+/docs/superpowers/
+AGENTS.md
+agents.md
+.claude/
+.codex/
+*.tex
+*.bib
+*.bbl
+*.pdf
+*.docx
+*.aux
+*.log
+*.synctex*
+
+# Editors and operating systems
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

@@ -1,0 +1,17 @@
+detectors:
+  - yolov8n
+  - yolov10n
+  - rtdetr
+  - fasterrcnn_r50_fpn
+
+datasets:
+  - exdark
+  - bdd100k_daytime
+  - bdd100k_night
+  - bdd100k_rain
+  - bdd100k_fog
+
+iou_threshold: 0.5
+confidence_threshold: 0.001
+nms_threshold: 0.7
+random_seed: 42
